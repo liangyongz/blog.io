@@ -29,25 +29,58 @@ description: nginx的安装
 nginx 不仅支持 http 协议，还支持 https（即在ssl协议上传输http），所以需要在 Centos 安装 OpenSSL 库。</p>
 <p></p>
 <pre><code class="language-none">yum install -y openssl openssl-devel</code></pre>
+<br />
 
-<h3 id="toc_1">二. PCRE pcre-devel 安装</h3>
-<p></p>
-<p></p>
-<pre><code class="language-none">yum install -y pcre pcre-devel</code></pre>
+<h2 id="toc_0">安装配置</h2>
 
-<h3 id="toc_1">二. PCRE pcre-devel 安装</h3>
-<p></p>
-<p></p>
-<pre><code class="language-none">yum install -y pcre pcre-devel</code></pre>
+<h3 id="toc_1">一.使用wget命令下载</h3>
+<p>直接使用wget命令下载：</p>
+<pre><code class="language-none">wget -c https://nginx.org/download/nginx-1.10.1.tar.gz</code></pre>
+<br />
+
+<h3 id="toc_1">二.解压</h3>
+<pre><code class="language-none">tar -zxvf nginx-1.10.1.tar.gz</code></pre>
+<pre><code class="language-none">cd nginx-1.10.1</code></pre>
+<br />
+
+<h3 id="toc_1">三.配置</h3>
+<p>推荐直接使用默认配置</p>
+<pre><code class="language-none">./configure</code></pre>
+<br />
+
+<h3 id="toc_1">四.编译安装</h3>
+<pre><code class="language-none">make</code></pre>
+<pre><code class="language-none">make install</code></pre>
+<p>查找安装路径:</p>
+<pre><code class="language-none">whereis nginx</code></pre>
+<br />
+
+<h3 id="toc_1">五.启动停止Nginx</h3>
+<pre><code class="language-none">cd /usr/local/nginx/sbin/</code></pre>
+<p>启动:</p>
+<pre><code class="language-none">./nginx</code></pre>
+<p>此方式相当于先查出nginx进程id再使用kill命令强制杀掉进程:</p>
+<pre><code class="language-none">./nginx -s stop</code></pre>
+<p>此方式停止步骤是待nginx进程处理任务完毕进行停止:</p>
+<pre><code class="language-none">./nginx -s quit</code></pre>
+<p>重新加载配置文件:nginx的配置文件 nginx.conf 修改后，要想让配置生效需要重启nginx，使用-s reload不用先停止 ngin x再启动 nginx 即可将配置信息在 nginx 中生效，如下：:</p>
+<pre><code class="language-none">./nginx -s reload</code></pre>
+<p>查询nginx进程：</p>
+<pre><code class="language-none">ps aux|grep nginx</code></pre>
+<br />
+
+<h3 id="toc_1">六.开机自启动Nginx</h3>
+<p>在rc.local增加启动代码就可以了</p>
+<pre><code class="language-none">vi /etc/rc.local</code></pre>
+<p>增加一行:</p>
+<pre><code class="language-none">/usr/local/nginx/sbin/nginx</code></pre>
+<p>设置执行权限：</p>
+<pre><code class="language-none">chmod 755 rc.local</code></pre>
+<br />
+
+<h3 id="toc_1">Nginx安装完毕</h3>
 
 
-<h3 id="toc_1">二. PCRE pcre-devel 安装</h3>
-<p></p>
-<p></p>
-
-
-
-这里是博客正文。
 
 
 
