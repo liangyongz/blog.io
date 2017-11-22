@@ -63,7 +63,7 @@ nginx 不仅支持 http 协议，还支持 https（即在ssl协议上传输http�
 <pre><code class="language-none">./nginx -s stop</code></pre>
 <p>此方式停止步骤是待nginx进程处理任务完毕进行停止:</p>
 <pre><code class="language-none">./nginx -s quit</code></pre>
-<p>重新加载配置文件:nginx的配置文件 nginx.conf 修改后，要想让配置生效需要重启nginx，使用-s reload不用先停止 ngin x再启动 nginx 即可将配置信息在 nginx 中生效，如下：:</p>
+<p>重新加载配置文件:nginx的配置文件 nginx.conf 修改后，要想让配置生效需要重启nginx，使用-s reload不用先停止nginx再启动nginx即可将配置信息在nginx中生效，如下:</p>
 <pre><code class="language-none">./nginx -s reload</code></pre>
 <p>查询nginx进程：</p>
 <pre><code class="language-none">ps aux|grep nginx</code></pre>
