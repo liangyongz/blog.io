@@ -1,6 +1,6 @@
 ---
 layout: post
-title: CentOS下安装Nginx
+title: LinuxCentOS下安装Nginx
 date: 2017-11-22
 categories: blog
 tags: [linux,nginx]
