@@ -74,6 +74,7 @@ nginx 不仅支持 http 协议，还支持 https（即在ssl协议上传输http�
 <pre><code class="language-none">vi /etc/rc.local</code></pre>
 <p>增加一行:</p>
 <pre><code class="language-none">/usr/local/nginx/sbin/nginx</code></pre>
+<img src="http://ozupw8iis.bkt.clouddn.com/3d294052472e8971134d5888aaf1cbf.png" align="center" class="img-responsive">
 <p>设置执行权限：</p>
 <pre><code class="language-none">chmod 755 rc.local</code></pre>
 <br />
