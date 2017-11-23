@@ -1,24 +1,24 @@
 ---
 layout: post
-title: LinuxCentOS下安装Nginx
-date: 2017-11-22
+title: Apache与Nginx对比
+date: 2017-11-23
 categories: blog
-tags: [linux,nginx]
-description: nginx的安装
+tags: [nginx，apache]
+description: Apache与Nginx对比
 ---
-##一、Nginx概述
+## 一、Nginx概述
 		Nginx (发音为[engine x])专为性能优化而开发，其最知名的优点是它的稳定性和低系统资源消耗，以及对并发连接的高处理能力(单台物理服务器可支持30000～50000个并发连接)， 是一个高性能的 HTTP 和反向代理服务器，也是一个IMAP/POP3/SMTP 代理服。
 
-##二、Apache服务器和nginx的优缺点
+## 二、Apache服务器和nginx的优缺点
 		我们之前大量使用Apache来作为HTTPServer。Apache具有很优秀的性能，而且通过模块可以提供各种丰富的功能。
 		
-###1)首先Apache对客户端的响应是支持并发的，运行httpd这个daemon进程之后，它会同时产生多个子进程/线程，每个子进程/线程分别对客户端的请求进行响应；
+### 1)首先Apache对客户端的响应是支持并发的，运行httpd这个daemon进程之后，它会同时产生多个子进程/线程，每个子进程/线程分别对客户端的请求进行响应；
 
 Apache两种工作模式:是prefork模式与worker模式
 
 prefork每个子进程只有一个线程，效率高但消耗内存大，是lunix下默认的模式；worker模式每个子进程有多个线程，内存消耗低，但一个线程崩溃会牵连其它同子进程的线程。
 
-#2)另外，Apache可以提供静态和动态的服务，例如对于PHP的解析不是通过性能较差的CGI实现的而是通过支持PHP的模块来实现的(通常为mod_php5，或者叫做apxs2)。
+# 2)另外，Apache可以提供静态和动态的服务，例如对于PHP的解析不是通过性能较差的CGI实现的而是通过支持PHP的模块来实现的(通常为mod_php5，或者叫做apxs2)。
 
 3)缺点:
 
