@@ -29,11 +29,11 @@ description: CentOS6.5安装MySQL5.1.73
 
 	yum -y install mysql mysql-server mysql-devel
 	
-安装完成..
+安装完成。。。
 
 ### 配置
 
-安装完MySQL数据库后，会发现多出了一个mysqld服务，这就是我们的数据库服务，启动它就是启动数据库。
+安装完MySQL数据库后，会发现多出了一个mysqld服务，这就是数据库服务，启动它就是启动数据库。
 
 	service mysqld start
 	
@@ -43,20 +43,22 @@ description: CentOS6.5安装MySQL5.1.73
 
 	chkconfig --list | grep mysqld
 
-如果2~5的都是on,说明是开机自动启动，否则如果不是。我们可以设置成开机自动启动:
+如果2~5的都是on,说明是开机自动启动；如果不是，我们可以设置成开机自动启动:
 
 	chkconfig mysqld on
 	
 <img src="http://ozupw8iis.bkt.clouddn.com/5.png" align="center" class="img-responsive">
 
-	
+<br />
 ## 三.配置数据库密码
 
 先启动mysqld服务，即：service mysqld start，然后执行命令
 
 	mysqladmin -u root -p password 'root'
 	
-意思是把root用户的密码设置为root，现在我们就可以登录MySQL数据库了 。
+意思是把root用户的密码设置为root，现在我们就可以登录MySQL数据库了：
+	
+	<img src="http://ozupw8iis.bkt.clouddn.com/11238.png" align="center" class="img-responsive">
 
 <img src="http://ozupw8iis.bkt.clouddn.com/6.png" align="center" class="img-responsive">
 
