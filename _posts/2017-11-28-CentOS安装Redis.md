@@ -1,6 +1,6 @@
 ---
 layout: post
-title: CentOS6.5安装Redis
+title: CentOS6.5安装Redis并配置
 date: 2017-11-28
 categories: blog
 tags: [linux，redis]
@@ -31,7 +31,7 @@ redis是一个key-value存储系统。和Memcached类似，它支持存储的val
 	
 这时会把这些可执行程序拷贝到/usr/local/bin目录下，由于/usr/local/bin是在系统的环境变量$PATH下定义的，因此终端在任意位置就可以执行redis-server和redis-cli了。
 
-至此redis安装就已初步完成,我们可以看下/usr/local/bin/下几个程序分别是做什么的,这里只做一个简单记录.
+至此redis安装就已初步完成,我们可以看下/usr/local/bin/下几个程序分别是做什么的,这里只做一个简单记录。
 
 redis-server：即我们的redis服务,最重要的一个服务
 
@@ -45,7 +45,7 @@ redis-check-aof：若以AOF方式的持久化，当意外发生时用来快速�
 
 redis-check-rdb：若以RDB方式的持久化，当意外发生时用来快速修复
 
-## 1.4 配置文件移动
+## 1.4 移动配置文件
 
 文件放在固定目录便于管理,也可以不这么做,不过建议自己管理一下命令和配置,文件路径如下:
 
@@ -79,6 +79,7 @@ dump file、进程pid、log目录等，一般放在/var/redis/
 
 	[root@instance-5tiad5rl ~]# ps -ef | grep redis
 
+<br />
 
 # redis配置
 
@@ -159,7 +160,11 @@ redis源码里其实已经提供了一个初始化脚本，用来管理启动、
 
 最后重启一下系统吧，进入系统之后直接运行redis-cli检验redis服务是否已经自动运行了。
 
-## 2.3 开放redis端口
+## 2.3 配置redis外网可访问
+
+redis默认只允许本地访问，要使redis可以远程访问可以修改redis.conf
+
+### 2.3.1 开放redis端口
 
 关闭防火墙
 
@@ -176,6 +181,15 @@ redis源码里其实已经提供了一个初始化脚本，用来管理启动、
 重启防火墙
 
 	[root@instance-5tiad5rl redis]# service iptables restart 
+	
+### 2.3.2 修改redis.conf文件
+
+将所有bind注释
+
+	# bind 192.168.1.100 10.0.0.1
+	# bind 127.0.0.1 ::1
+	
+重启redis服务即可。
 
 ## 2.4 redis设置密码
 出于安全考虑,我设置了redis的密码,具体步骤如下
@@ -198,4 +212,8 @@ redis源码里其实已经提供了一个初始化脚本，用来管理启动、
 
 <img src="http://ozupw8iis.bkt.clouddn.com/2017112810.png" align="center" class="img-responsive">
 
-## The End
+# 总结
+
+之前一直用redis服务器和关于java的API,这次借着新部署服务器的机会,从头体验了下redis的安装和配置,以上配置结束,基本就满足个人的测试和使用了。
+
+# The End
