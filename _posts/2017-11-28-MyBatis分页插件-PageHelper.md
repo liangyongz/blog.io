@@ -17,24 +17,26 @@ description: MyBatis分页插件-PageHelper
 
 下面有各版本jar包
 
-	[https://oss.sonatype.org/content/repositories/releases/com/github/pagehelper/pagehelper/](https://oss.sonatype.org/content/repositories/releases/com/github/pagehelper/pagehelper/)
+[https://oss.sonatype.org/content/repositories/releases/com/github/pagehelper/pagehelper/](https://oss.sonatype.org/content/repositories/releases/com/github/pagehelper/pagehelper/)
 	
-	[http://repo1.maven.org/maven2/com/github/pagehelper/pagehelper/](http://repo1.maven.org/maven2/com/github/pagehelper/pagehelper/)
+[http://repo1.maven.org/maven2/com/github/pagehelper/pagehelper/](http://repo1.maven.org/maven2/com/github/pagehelper/pagehelper/)
 	
 	
 由于使用了sql解析工具,所以还需要下载jsqlparser.jar
 
-	[http://repo1.maven.org/maven2/com/github/jsqlparser/jsqlparser/0.9.1/](http://repo1.maven.org/maven2/com/github/jsqlparser/jsqlparser/0.9.1/)
+[http://repo1.maven.org/maven2/com/github/jsqlparser/jsqlparser/0.9.1/](http://repo1.maven.org/maven2/com/github/jsqlparser/jsqlparser/0.9.1/)
 	
-	[https://gitee.com/free/Mybatis_PageHelper/attach_files](https://gitee.com/free/Mybatis_PageHelper/attach_files)
+[https://gitee.com/free/Mybatis_PageHelper/attach_files](https://gitee.com/free/Mybatis_PageHelper/attach_files)
 	
 ### 方法2.使用maven依赖
 
-> <dependency>
+```Java
+ 	<dependency>
     <groupId>com.github.pagehelper</groupId>
     <artifactId>pagehelper</artifactId>
     <version>4.0.0</version>
 	</dependency>
+```
 
 这里我使用的是方法2
 
@@ -42,7 +44,8 @@ description: MyBatis分页插件-PageHelper
 
 ### 方法1.在Mybatis配置xml中配置拦截器插件
 
-> <!-- 
+```Java
+ <!-- 
     plugins在配置文件中的位置必须符合要求，否则会报错，顺序如下:
     properties?, settings?, 
     typeAliases?, typeHandlers?, 
@@ -75,10 +78,12 @@ description: MyBatis分页插件-PageHelper
         <property name="params" value="pageNum=start;pageSize=limit;"/>
     </plugin>
 	</plugins>
+```
 
 ### 方法2.在spring中配置拦截器
 
-> <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+```Java
+	 <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
 		<property name="configLocation" value="classpath:mybatis.xml" />
 		<property name="mapperLocations">
@@ -100,13 +105,16 @@ description: MyBatis分页插件-PageHelper
 			</array>
 		</property>
 	</bean>
+```
 	
 这里我用的方法2
 
 ## 使用
 
-> PageHelper.startPage(pageNum, pageSize);
+```Java
+	PageHelper.startPage(pageNum, pageSize);
 	return taskDao.queryTestTask();
+```
 	
 即在执行sql前先执行startPage即可查询第几页,多少条。紧跟其后的第一个SELECT方法会被分页，后面不会被分页！
 
@@ -121,10 +129,12 @@ description: MyBatis分页插件-PageHelper
 	
 PageInfo有多个属性,常用的有
 
-> content.getTotal()
+```Java
+	content.getTotal()
 	content.getPages()
 	content.getPageNum()
 	content.getPageSize()
 	content.getList()
+```
 
 # The End
