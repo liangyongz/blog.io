@@ -3,7 +3,7 @@ layout: post
 title: CentOS6.5安装Redis并配置
 date: 2017-11-28
 categories: blog
-tags: [linux，redis]
+tags: [linux,redis]
 description: CentOS6.5安装Redis
 ---
 # 前言

@@ -3,7 +3,7 @@ layout: post
 title: CentOS6.5安装MySQL5.1.73
 date: 2017-11-23
 categories: blog
-tags: [linux，mysql]
+tags: [linux,mysql]
 description: CentOS6.5安装MySQL5.1.73
 ---
 ## 一、检查系统原有版本并卸除
