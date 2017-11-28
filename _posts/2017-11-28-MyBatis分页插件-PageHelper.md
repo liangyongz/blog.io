@@ -31,11 +31,11 @@ description: MyBatis分页插件-PageHelper
 ### 方法2.使用maven依赖
 
 ```Java
- 	<dependency>
+<dependency>
     <groupId>com.github.pagehelper</groupId>
     <artifactId>pagehelper</artifactId>
     <version>4.0.0</version>
-	</dependency>
+</dependency>
 ```
 
 这里我使用的是方法2
@@ -124,8 +124,10 @@ description: MyBatis分页插件-PageHelper
 
 如果需要取出分页信息，需要强制转换成Page，在这里我们直接使用PageInfo类对结果进行包装
 
-> List<Map<String,Object>> taskList = taskManageService.queryTestTask(pageNum,pageSize);
-	PageInfo<Map<String, Object>> pageInfo = new PageInfo<Map<String, Object>>(taskList);
+```Java
+List<Map<String,Object>> taskList = taskManageService.queryTestTask(pageNum,pageSize);
+PageInfo<Map<String, Object>> pageInfo = new PageInfo<Map<String, Object>>(taskList);
+```
 	
 PageInfo有多个属性,常用的有
 
