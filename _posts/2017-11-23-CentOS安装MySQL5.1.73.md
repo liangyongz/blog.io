@@ -58,7 +58,7 @@ description: CentOS6.5安装MySQL5.1.73
 	
 意思是把root用户的密码设置为root，现在我们就可以登录MySQL数据库了：
 	
-	<img src="http://ozupw8iis.bkt.clouddn.com/11238.png" align="center" class="img-responsive">
+<img src="http://ozupw8iis.bkt.clouddn.com/11238.png" align="center" class="img-responsive">
 
 <img src="http://ozupw8iis.bkt.clouddn.com/6.png" align="center" class="img-responsive">
 
