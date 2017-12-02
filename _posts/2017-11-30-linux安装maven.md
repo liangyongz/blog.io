@@ -15,7 +15,7 @@ Apache Maven，是一个软件（特别是Java软件）项目管理及自动构�
 
 ## maven下载
 
-	[maven-3.0.5下载地址](http://ozupw8iis.bkt.clouddn.com/apache-maven-3.0.5-bin.tar.gz)
+[maven-3.0.5下载地址](http://ozupw8iis.bkt.clouddn.com/apache-maven-3.0.5-bin.tar.gz)
 	
 ## 解压
 

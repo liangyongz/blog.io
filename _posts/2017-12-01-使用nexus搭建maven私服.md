@@ -27,11 +27,11 @@ description: 使用nexus搭建maven私服
 
 所有版本下载地址
 
-	[http://www.sonatype.org/nexus/archived/](http://www.sonatype.org/nexus/archived/)
+[http://www.sonatype.org/nexus/archived/](http://www.sonatype.org/nexus/archived/)
 	
 我使用的是nexus-2.12.0-01,下面是安装包地址
 
-		[nexus-2.12.0-01下载地址](http://ozupw8iis.bkt.clouddn.com/apache-maven-3.0.5-bin.tar.gz)
+[nexus-2.12.0-01下载地址](http://ozupw8iis.bkt.clouddn.com/apache-maven-3.0.5-bin.tar.gz)
 
 ## 解压
 
@@ -70,11 +70,9 @@ sonatype-work ：maven下载jar存放地址
 
 在setting.xml文件添加mirror:
 
-```java
-	  <localRepository>E:\maven\maven\repository</localRepository>
-  
-   <mirrors>
-	<!-- nexu http://IP:8088/nexus/content/groups/public -->
+
+	<localRepository>E:\maven\repository</localRepository>
+  <mirrors>
 	<mirror>
 		<id>central</id>
 		<name>central-mirror</name>
@@ -82,12 +80,11 @@ sonatype-work ：maven下载jar存放地址
 		<url>http://IP:8081/nexus/content/repositories/central/</url>
 	</mirror>
   </mirrors>
-```
+
 
 在settings.xml中配置server
 
-```java
-	 <servers>
+	<servers>
     <server>
 		<id>releases</id>
 		<username>admin</username>
@@ -98,56 +95,6 @@ sonatype-work ：maven下载jar存放地址
 		<username>admin</username>
 		<password>admin123</password>
     </server>	
-  </servers>
-
-
-
-
-
-
-
-## maven下载
-
-	[maven-3.0.5下载地址](http://ozupw8iis.bkt.clouddn.com/apache-maven-3.0.5-bin.tar.gz)
-
-
-
-
-
-
-Apache Maven，是一个软件（特别是Java软件）项目管理及自动构建工具，由Apache软件基金会所提供。基于项目对象模型（POM）概念，Maven利用一个中央信息片断能管理一个项目的构建、报告和文档等步骤。曾是Jakarta项目的子项目，现为独立Apache项目。
-
-# 安装
-
-## maven下载
-
-	[maven-3.0.5下载地址](http://ozupw8iis.bkt.clouddn.com/apache-maven-3.0.5-bin.tar.gz)
-	
-## 解压
-
-	[root@instance-5tiad5rl baidudata]# tar zxvf apache-maven-3.0.5-bin.tar.gz
-	
-	[root@instance-5tiad5rl baidudata]# mv apache-maven-3.0.5 /usr/local/maven3
-	
-## 配置/etc/profile
-
-	 vi /etc/profile
-	 
-新增配置文件如下
-
-	MAVEN_HOME=/usr/local/maven3
-	export MAVEN_HOME
-	export PATH=${PATH}:${MAVEN_HOME}/bin
-	 
-执行source /etc/profile使环境变量生效
-
-	[root@instance-5tiad5rl baidudata]# source /etc/profile
-	 
-## 验证
-
-	[root@instance-5tiad5rl baidudata]# mvn -v
-
-
-<img src="http://ozupw8iis.bkt.clouddn.com/201711301.png" align="center" class="img-responsive">
+	</servers>
 
 # The End
